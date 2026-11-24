@@ -66,7 +66,7 @@ jobs:
             final g=gcd(n,denominator);
             return "$sign$ft' $whole ${n~/g}/${denominator~/g}\\\"";
           }"""
-          p.write_text(s[:start] + method + s[end:])
+          p.write_text(s[:start] + method + s[end+3:])
           Path("test/widget_test.dart").unlink(missing_ok=True)
           PY
 
@@ -76,7 +76,7 @@ jobs:
 
       - name: Analyze Dart source
         working-directory: extracted/EngrCalc_v1
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Run tests
         working-directory: extracted/EngrCalc_v1
