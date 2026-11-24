@@ -1,0 +1,68 @@
+name: Android release build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'EngrCalc_v1_cloud_build.zip'
+      - '.github/workflows/android-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Extract project archive
+        run: |
+          test -f EngrCalc_v1_cloud_build.zip
+          mkdir -p extracted
+          unzip -q EngrCalc_v1_cloud_build.zip -d extracted
+          test -f extracted/EngrCalc_v1/pubspec.yaml
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Generate Android platform files
+        working-directory: extracted/EngrCalc_v1
+        run: |
+          rm -rf android
+          flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
+          sed -i 's/<application/<application android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
+
+      - name: Resolve dependencies
+        working-directory: extracted/EngrCalc_v1
+        run: flutter pub get
+
+      - name: Analyze Dart source
+        working-directory: extracted/EngrCalc_v1
+        run: flutter analyze
+
+      - name: Run tests
+        working-directory: extracted/EngrCalc_v1
+        run: flutter test
+
+      - name: Build release APK
+        working-directory: extracted/EngrCalc_v1
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EngrCalc_v1-release-apk
+          path: extracted/EngrCalc_v1/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
