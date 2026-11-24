@@ -42,7 +42,7 @@ jobs:
         run: |
           rm -rf android
           flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
-          sed -i 's/<application/<application android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
+          sed -i 's/android:label="engr_calc_v1"/android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
 
       - name: Repair starter syntax and remove generated placeholder test
         working-directory: extracted/EngrCalc_v1
