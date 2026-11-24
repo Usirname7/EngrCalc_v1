@@ -44,6 +44,32 @@ jobs:
           flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
           sed -i 's/<application/<application android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
 
+      - name: Repair starter syntax and remove generated placeholder test
+        working-directory: extracted/EngrCalc_v1
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("lib/core/math_engine.dart")
+          s = p.read_text()
+          start = s.index(" static String feetInches(")
+          end = s.index("\n }\n}", start)
+          method = """ static String feetInches(double inches,{int denominator=16}){
+            final sign=inches<0?'-':'';
+            final x=inches.abs();
+            var ft=(x/12).floor();
+            var whole=(x-ft*12).floor();
+            var n=((x-ft*12-whole)*denominator).round();
+            if(n==denominator){whole++;n=0;}
+            if(whole==12){ft++;whole=0;}
+            if(n==0)return "$sign$ft' $whole\\\"";
+            int gcd(int a,int b)=>b==0?a:gcd(b,a%b);
+            final g=gcd(n,denominator);
+            return "$sign$ft' $whole ${n~/g}/${denominator~/g}\\\"";
+          }"""
+          p.write_text(s[:start] + method + s[end:])
+          Path("test/widget_test.dart").unlink(missing_ok=True)
+          PY
+
       - name: Resolve dependencies
         working-directory: extracted/EngrCalc_v1
         run: flutter pub get
