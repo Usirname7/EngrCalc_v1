@@ -4,7 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - 'EngrCalc_v1_cloud_build.zip'
+      - 'pubspec.yaml'
+      - 'lib/**'
+      - 'assets/**'
+      - 'test/**'
+      - 'android/**'
       - '.github/workflows/android-release.yml'
   workflow_dispatch:
 
@@ -18,13 +22,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Extract project archive
+      - name: Verify Flutter project files
         run: |
-          test -f EngrCalc_v1_cloud_build.zip
-          mkdir -p extracted
-          unzip -q EngrCalc_v1_cloud_build.zip -d extracted
-          test -f extracted/EngrCalc_v1/pubspec.yaml
-
+          test -f pubspec.yaml
+          test -d lib
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -38,14 +39,14 @@ jobs:
           cache: true
 
       - name: Generate Android platform files
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: |
           rm -rf android
           flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
           sed -i 's/android:label="engr_calc_v1"/android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
 
       - name: Repair starter syntax and remove generated placeholder test
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -71,24 +72,24 @@ jobs:
           PY
 
       - name: Resolve dependencies
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: flutter pub get
 
       - name: Analyze Dart source
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Run tests
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: flutter test
 
       - name: Build release APK
-        working-directory: extracted/EngrCalc_v1
+        working-directory: .
         run: flutter build apk --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: EngrCalc_v1-release-apk
-          path: extracted/EngrCalc_v1/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
