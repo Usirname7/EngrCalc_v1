@@ -1,0 +1,26 @@
+{
+  "descriptionsByColumn": {
+    "L": "Overall depth of member",
+    "DA": "Nominal Thickness",
+    "DB": "Design Thickness",
+    "CY": "Overall depth",
+    "CZ": "Depth of flat wall",
+    "CS": "Overall width",
+    "CT": "Width of flat wall",
+    "U": "Slenderness ratio",
+    "V": "Slenderness ratio",
+    "AI": "Radius of gyration about the y-axis",
+    "AT": "Radius of gyration about the y-axis",
+    "DX": "Radius of gyration about the y-axis",
+    "BD": "Thickness",
+    "BW": "Slenderness ratio",
+    "CD": "Slenderness ratio",
+    "DN": "Slenderness ratio",
+    "CU": "Slenderness ratio",
+    "CV": "Slenderness ratio",
+    "CW": "Slenderness ratio",
+    "CX": "Slenderness ratio",
+    "DC": "Slenderness ratio",
+    "DO": "Elastic section modulus about the z-axis"
+  }
+}

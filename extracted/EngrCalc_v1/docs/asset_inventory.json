@@ -1,0 +1,971 @@
+{
+  "archive": "/mnt/data/Calc_8.9.0 all recovered documents.zip",
+  "assets_copied": [
+    {
+      "source": "Calc_8.9.0 copy/Properties/res/font/roboto_medium_numbers.ttf",
+      "destination": "assets/fonts/roboto_medium_numbers.ttf",
+      "bytes": 3316
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/fonts/CustomAppIcons.ttf",
+      "destination": "assets/fonts/CustomAppIcons.ttf",
+      "bytes": 2016
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/fonts/MaterialIcons-Regular.otf",
+      "destination": "assets/fonts/MaterialIcons-Regular.otf",
+      "bytes": 21020
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/fonts/custom_app_icons.ttf",
+      "destination": "assets/fonts/custom_app_icons.ttf",
+      "bytes": 1980
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/loadWeightMaterials.json",
+      "destination": "assets/data/materials/loadWeightMaterials.json",
+      "bytes": 1093997
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/MaterialSymbolsRounded-Regular.ttf",
+      "destination": "assets/fonts/MaterialSymbolsRounded-Regular.ttf",
+      "bytes": 1059728
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/MaterialSymbolsRounded_Filled-Regular.ttf",
+      "destination": "assets/fonts/MaterialSymbolsRounded_Filled-Regular.ttf",
+      "bytes": 1607684
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/NotoSans-Regular.ttf",
+      "destination": "assets/fonts/NotoSans-Regular.ttf",
+      "bytes": 629024
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/NotoSansSymbols-VariableFont_wght.ttf",
+      "destination": "assets/fonts/NotoSansSymbols-VariableFont_wght.ttf",
+      "bytes": 375268
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/OpenSans-Bold.ttf",
+      "destination": "assets/fonts/OpenSans-Bold.ttf",
+      "bytes": 130860
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/OpenSans-Italic.ttf",
+      "destination": "assets/fonts/OpenSans-Italic.ttf",
+      "bytes": 136604
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/OpenSans-Light.ttf",
+      "destination": "assets/fonts/OpenSans-Light.ttf",
+      "bytes": 130804
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/fonts/OpenSans-Regular.ttf",
+      "destination": "assets/fonts/OpenSans-Regular.ttf",
+      "bytes": 130832
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/data/steel_fabrication/beam_tables_display_overrides.json",
+      "destination": "assets/data/steel_fabrication/beam_tables_display_overrides.json",
+      "bytes": 782
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/data/steel_fabrication/beam_tables_hss_a1085.min.json",
+      "destination": "assets/data/steel_fabrication/beam_tables_hss_a1085.min.json",
+      "bytes": 279287
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/data/steel_fabrication/beam_tables_v16_native.min.json.gz",
+      "destination": "assets/data/steel_fabrication/beam_tables_v16_native.min.json.gz",
+      "bytes": 312840
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/HVAC.png",
+      "destination": "assets/images/HVAC.png",
+      "bytes": 50789
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/app_store.png",
+      "destination": "assets/images/app_store.png",
+      "bytes": 7571
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/arch_calc_icon.png",
+      "destination": "assets/images/arch_calc_icon.png",
+      "bytes": 296777
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/area.png",
+      "destination": "assets/images/area.png",
+      "bytes": 931
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/area_to_count.png",
+      "destination": "assets/images/area_to_count.png",
+      "bytes": 11648
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/background.png",
+      "destination": "assets/images/background.png",
+      "bytes": 164604
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/baluster.png",
+      "destination": "assets/images/baluster.png",
+      "bytes": 7057
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/board_foot_icon.png",
+      "destination": "assets/images/board_foot_icon.png",
+      "bytes": 13456
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/board_foot_image.png",
+      "destination": "assets/images/board_foot_image.png",
+      "bytes": 44682
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets.png",
+      "destination": "assets/images/cabinets.png",
+      "bytes": 5660
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/camera_icon.png",
+      "destination": "assets/images/camera_icon.png",
+      "bytes": 31139
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cement_truck.png",
+      "destination": "assets/images/cement_truck.png",
+      "bytes": 17682
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/circle_advanced.png",
+      "destination": "assets/images/circle_advanced.png",
+      "bytes": 6730
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/circle_advanced_image.png",
+      "destination": "assets/images/circle_advanced_image.png",
+      "bytes": 17049
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete_and_fill.png",
+      "destination": "assets/images/concrete_and_fill.png",
+      "bytes": 30748
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/converter.png",
+      "destination": "assets/images/converter.png",
+      "bytes": 1660
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/copper_pipe.png",
+      "destination": "assets/images/copper_pipe.png",
+      "bytes": 69204
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cube.png",
+      "destination": "assets/images/cube.png",
+      "bytes": 2980
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cut_list_icon.png",
+      "destination": "assets/images/cut_list_icon.png",
+      "bytes": 9957
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cylinder_area_volume.png",
+      "destination": "assets/images/cylinder_area_volume.png",
+      "bytes": 27663
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cylinder_area_volume_diameter.png",
+      "destination": "assets/images/cylinder_area_volume_diameter.png",
+      "bytes": 36878
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cylinder_area_volume_radius.png",
+      "destination": "assets/images/cylinder_area_volume_radius.png",
+      "bytes": 6660
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cylinder_icon.png",
+      "destination": "assets/images/cylinder_icon.png",
+      "bytes": 12956
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/diameter_image.png",
+      "destination": "assets/images/diameter_image.png",
+      "bytes": 5465
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/discord.png",
+      "destination": "assets/images/discord.png",
+      "bytes": 13334
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/dms_math.png",
+      "destination": "assets/images/dms_math.png",
+      "bytes": 35082
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/dollar_icon.png",
+      "destination": "assets/images/dollar_icon.png",
+      "bytes": 25281
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/door_icon.png",
+      "destination": "assets/images/door_icon.png",
+      "bytes": 5960
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric_icon.png",
+      "destination": "assets/images/electric_icon.png",
+      "bytes": 12629
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/equal_spacing.png",
+      "destination": "assets/images/equal_spacing.png",
+      "bytes": 1086
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/floor_tiles_icon.png",
+      "destination": "assets/images/floor_tiles_icon.png",
+      "bytes": 18754
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/floorplan_icon.png",
+      "destination": "assets/images/floorplan_icon.png",
+      "bytes": 3494
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/floorplan_icon_dark.png",
+      "destination": "assets/images/floorplan_icon_dark.png",
+      "bytes": 7088
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/framing_icon.png",
+      "destination": "assets/images/framing_icon.png",
+      "bytes": 9496
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/grid_ceiling_icon.png",
+      "destination": "assets/images/grid_ceiling_icon.png",
+      "bytes": 3017
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/grid_layout.png",
+      "destination": "assets/images/grid_layout.png",
+      "bytes": 3077
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/grout.png",
+      "destination": "assets/images/grout.png",
+      "bytes": 2870
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/home.png",
+      "destination": "assets/images/home.png",
+      "bytes": 31138
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/i_beam.png",
+      "destination": "assets/images/i_beam.png",
+      "bytes": 15301
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/intervals.png",
+      "destination": "assets/images/intervals.png",
+      "bytes": 5454
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/invoice_icon.png",
+      "destination": "assets/images/invoice_icon.png",
+      "bytes": 23587
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/level_icon.png",
+      "destination": "assets/images/level_icon.png",
+      "bytes": 60603
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/linear.png",
+      "destination": "assets/images/linear.png",
+      "bytes": 391
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/manometer.png",
+      "destination": "assets/images/manometer.png",
+      "bytes": 21706
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/miter.png",
+      "destination": "assets/images/miter.png",
+      "bytes": 3828
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/nec_icon.png",
+      "destination": "assets/images/nec_icon.png",
+      "bytes": 16766
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/number.png",
+      "destination": "assets/images/number.png",
+      "bytes": 3343
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ohms_law.png",
+      "destination": "assets/images/ohms_law.png",
+      "bytes": 9829
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe.png",
+      "destination": "assets/images/pipe.png",
+      "bytes": 3094
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting_tools.png",
+      "destination": "assets/images/pipe_fitting_tools.png",
+      "bytes": 6513
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/plate_thickness.png",
+      "destination": "assets/images/plate_thickness.png",
+      "bytes": 5529
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/play_store.png",
+      "destination": "assets/images/play_store.png",
+      "bytes": 5192
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/plumb.png",
+      "destination": "assets/images/plumb.png",
+      "bytes": 5083
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pressure_converter.png",
+      "destination": "assets/images/pressure_converter.png",
+      "bytes": 17861
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/projects_icon.png",
+      "destination": "assets/images/projects_icon.png",
+      "bytes": 8997
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/punch_list_icon.png",
+      "destination": "assets/images/punch_list_icon.png",
+      "bytes": 11823
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pvc_pipe.png",
+      "destination": "assets/images/pvc_pipe.png",
+      "bytes": 72168
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pythagorean.png",
+      "destination": "assets/images/pythagorean.png",
+      "bytes": 6297
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/radius_image.png",
+      "destination": "assets/images/radius_image.png",
+      "bytes": 5357
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rake_wall.png",
+      "destination": "assets/images/rake_wall.png",
+      "bytes": 1542
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rake_wall_colored.png",
+      "destination": "assets/images/rake_wall_colored.png",
+      "bytes": 15235
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/right_triangle.png",
+      "destination": "assets/images/right_triangle.png",
+      "bytes": 3473
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ring_segment_icon.png",
+      "destination": "assets/images/ring_segment_icon.png",
+      "bytes": 18115
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rock_pile.png",
+      "destination": "assets/images/rock_pile.png",
+      "bytes": 34078
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/scale.png",
+      "destination": "assets/images/scale.png",
+      "bytes": 1367
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/scroll.png",
+      "destination": "assets/images/scroll.png",
+      "bytes": 1185
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/simple_optimizer.png",
+      "destination": "assets/images/simple_optimizer.png",
+      "bytes": 1247
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/slope_icon.png",
+      "destination": "assets/images/slope_icon.png",
+      "bytes": 3707
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_pipe.png",
+      "destination": "assets/images/steel_pipe.png",
+      "bytes": 67991
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/stringer.png",
+      "destination": "assets/images/stringer.png",
+      "bytes": 1985
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/stringer_icon.png",
+      "destination": "assets/images/stringer_icon.png",
+      "bytes": 5298
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/survey.png",
+      "destination": "assets/images/survey.png",
+      "bytes": 10206
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/temperature_converter_icon.png",
+      "destination": "assets/images/temperature_converter_icon.png",
+      "bytes": 13395
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/temperature_converter_icon@3x.png",
+      "destination": "assets/images/temperature_converter_icon@3x.png",
+      "bytes": 13395
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/time_tracker_icon.png",
+      "destination": "assets/images/time_tracker_icon.png",
+      "bytes": 19217
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/to_do_icon.png",
+      "destination": "assets/images/to_do_icon.png",
+      "bytes": 8121
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/tongue_and_groove_icon.png",
+      "destination": "assets/images/tongue_and_groove_icon.png",
+      "bytes": 7393
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/triangle_3d.png",
+      "destination": "assets/images/triangle_3d.png",
+      "bytes": 20032
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/unit_converter_v2.png",
+      "destination": "assets/images/unit_converter_v2.png",
+      "bytes": 6099
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/utility_pole.png",
+      "destination": "assets/images/utility_pole.png",
+      "bytes": 6981
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/utility_pole_2.png",
+      "destination": "assets/images/utility_pole_2.png",
+      "bytes": 9123
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/weight.png",
+      "destination": "assets/images/weight.png",
+      "bytes": 28029
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding_icon.png",
+      "destination": "assets/images/welding_icon.png",
+      "bytes": 33421
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/packages/syncfusion_flutter_datagrid/assets/font/FilterIcon.ttf",
+      "destination": "assets/fonts/FilterIcon.ttf",
+      "bytes": 2796
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/packages/syncfusion_flutter_datagrid/assets/font/UnsortIcon.ttf",
+      "destination": "assets/fonts/UnsortIcon.ttf",
+      "bytes": 1092
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets/cabinet_box.png",
+      "destination": "assets/images/cabinet_box.png",
+      "bytes": 6576
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets/cabinet_box_2.png",
+      "destination": "assets/images/cabinet_box_2.png",
+      "bytes": 8770
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets/cabinet_doors.png",
+      "destination": "assets/images/cabinet_doors.png",
+      "bytes": 13376
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets/cabinets_layout.png",
+      "destination": "assets/images/cabinets_layout.png",
+      "bytes": 6253
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cabinets/drawer_box.png",
+      "destination": "assets/images/drawer_box.png",
+      "bytes": 10363
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/hvac/ach_calculator.png",
+      "destination": "assets/images/ach_calculator.png",
+      "bytes": 14469
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/hvac/cooling_load.png",
+      "destination": "assets/images/cooling_load.png",
+      "bytes": 15756
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/hvac/duct_sizing.png",
+      "destination": "assets/images/duct_sizing.png",
+      "bytes": 7453
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/hvac/friction_loss.png",
+      "destination": "assets/images/friction_loss.png",
+      "bytes": 6301
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/hvac/psychrometrics.png",
+      "destination": "assets/images/psychrometrics.png",
+      "bytes": 21422
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/ampacity.png",
+      "destination": "assets/images/ampacity.png",
+      "bytes": 8270
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/box_fill_icon.png",
+      "destination": "assets/images/box_fill_icon.png",
+      "bytes": 12121
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/conduit_fill.png",
+      "destination": "assets/images/conduit_fill.png",
+      "bytes": 16840
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/electric_size_converter.png",
+      "destination": "assets/images/electric_size_converter.png",
+      "bytes": 19690
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/motor_icon.png",
+      "destination": "assets/images/motor_icon.png",
+      "bytes": 9737
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/electric/voltage_drop.png",
+      "destination": "assets/images/voltage_drop.png",
+      "bytes": 9825
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_bending/four_point_saddle.png",
+      "destination": "assets/images/four_point_saddle.png",
+      "bytes": 1792
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_bending/pipe_bending_simple_offset.png",
+      "destination": "assets/images/pipe_bending_simple_offset.png",
+      "bytes": 957
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_bending/simple_offset.png",
+      "destination": "assets/images/simple_offset.png",
+      "bytes": 959
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_bending/single_90_bend.png",
+      "destination": "assets/images/single_90_bend.png",
+      "bytes": 1372
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_bending/three_point_saddle.png",
+      "destination": "assets/images/three_point_saddle.png",
+      "bytes": 1816
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/bell_footing.png",
+      "destination": "assets/images/bell_footing.png",
+      "bytes": 22309
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/blank.png",
+      "destination": "assets/images/blank.png",
+      "bytes": 8833
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/block.png",
+      "destination": "assets/images/block.png",
+      "bytes": 5434
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/concrete_area_icon.png",
+      "destination": "assets/images/concrete_area_icon.png",
+      "bytes": 26053
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/cylinder_diameter.png",
+      "destination": "assets/images/cylinder_diameter.png",
+      "bytes": 12631
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/cylinder_radius.png",
+      "destination": "assets/images/cylinder_radius.png",
+      "bytes": 12230
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/footing.png",
+      "destination": "assets/images/footing.png",
+      "bytes": 12048
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/grid.png",
+      "destination": "assets/images/grid.png",
+      "bytes": 20683
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/perimeter_footing.png",
+      "destination": "assets/images/perimeter_footing.png",
+      "bytes": 27048
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/right_triangular_prism.png",
+      "destination": "assets/images/right_triangular_prism.png",
+      "bytes": 8394
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/slab.png",
+      "destination": "assets/images/slab.png",
+      "bytes": 8672
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/concrete/stairs.png",
+      "destination": "assets/images/stairs.png",
+      "bytes": 9535
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cut_optimizer/cut_optimizer.png",
+      "destination": "assets/images/cut_optimizer.png",
+      "bytes": 1781
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cut_optimizer/linear_1d_optimizer.png",
+      "destination": "assets/images/linear_1d_optimizer.png",
+      "bytes": 10431
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/cut_optimizer/linear_1d_optimizer_multi_stock.png",
+      "destination": "assets/images/linear_1d_optimizer_multi_stock.png",
+      "bytes": 8536
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/butt_weld_icon.png",
+      "destination": "assets/images/butt_weld_icon.png",
+      "bytes": 21831
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/equal_spread_offset.png",
+      "destination": "assets/images/equal_spread_offset.png",
+      "bytes": 9537
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/pipe_sizes.png",
+      "destination": "assets/images/pipe_sizes.png",
+      "bytes": 22482
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/survey/traverse.png",
+      "destination": "assets/images/traverse.png",
+      "bytes": 10230
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ruler/metric_ruler_icon.png",
+      "destination": "assets/images/metric_ruler_icon.png",
+      "bytes": 24603
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ruler/ruler_calibrate_step_1.png",
+      "destination": "assets/images/ruler_calibrate_step_1.png",
+      "bytes": 20094
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ruler/ruler_calibrate_step_2.png",
+      "destination": "assets/images/ruler_calibrate_step_2.png",
+      "bytes": 18814
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ruler/ruler_icon.png",
+      "destination": "assets/images/ruler_icon.png",
+      "bytes": 26082
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/ruler/scale_icon.png",
+      "destination": "assets/images/scale_icon.png",
+      "bytes": 15712
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rafter/common_rafter.png",
+      "destination": "assets/images/common_rafter.png",
+      "bytes": 3121
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rafter/common_rafter_full.png",
+      "destination": "assets/images/common_rafter_full.png",
+      "bytes": 7621
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/rafter/common_rafter_half.png",
+      "destination": "assets/images/common_rafter_half.png",
+      "bytes": 5934
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/plate_thickness.png",
+      "destination": "assets/images/plate_thickness.png",
+      "bytes": 5529
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/plate_thickness_2.png",
+      "destination": "assets/images/plate_thickness_2.png",
+      "bytes": 6608
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/double_bevel_groove.png",
+      "destination": "assets/images/double_bevel_groove.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/double_fillet_symbol.png",
+      "destination": "assets/images/double_fillet_symbol.png",
+      "bytes": 627
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/double_v_groove.png",
+      "destination": "assets/images/double_v_groove.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/fillet_weld_icon.png",
+      "destination": "assets/images/fillet_weld_icon.png",
+      "bytes": 7062
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/single_bevel_broad_root_face.png",
+      "destination": "assets/images/single_bevel_broad_root_face.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/single_bevel_groove.png",
+      "destination": "assets/images/single_bevel_groove.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/single_fillet_symbol.png",
+      "destination": "assets/images/single_fillet_symbol.png",
+      "bytes": 627
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/single_v_groove.png",
+      "destination": "assets/images/single_v_groove.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/square_butt.png",
+      "destination": "assets/images/square_butt.png",
+      "bytes": 417
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/weld_double_fillet.png",
+      "destination": "assets/images/weld_double_fillet.png",
+      "bytes": 14853
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/welding/weld_single_fillet.png",
+      "destination": "assets/images/weld_single_fillet.png",
+      "bytes": 13261
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/hanger/BOI.png",
+      "destination": "assets/images/BOI.png",
+      "bytes": 18998
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/hanger/BOP.png",
+      "destination": "assets/images/BOP.png",
+      "bytes": 18714
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/hanger/CL.png",
+      "destination": "assets/images/CL.png",
+      "bytes": 13589
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/pipe_fitting/hanger/hanger.png",
+      "destination": "assets/images/hanger.png",
+      "bytes": 15689
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/2L.png",
+      "destination": "assets/images/2L.png",
+      "bytes": 915
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/2L_dim.png",
+      "destination": "assets/images/2L_dim.png",
+      "bytes": 13683
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/2L_dim_LLBB.png",
+      "destination": "assets/images/2L_dim_LLBB.png",
+      "bytes": 15043
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/2L_dim_SLBB.png",
+      "destination": "assets/images/2L_dim_SLBB.png",
+      "bytes": 14392
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/2L_dim_even.png",
+      "destination": "assets/images/2L_dim_even.png",
+      "bytes": 25304
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/C.png",
+      "destination": "assets/images/C.png",
+      "bytes": 1116
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/C_dim.png",
+      "destination": "assets/images/C_dim.png",
+      "bytes": 18665
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/H.png",
+      "destination": "assets/images/H.png",
+      "bytes": 1017
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/HSS.png",
+      "destination": "assets/images/HSS.png",
+      "bytes": 960
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/HSS_dim.png",
+      "destination": "assets/images/HSS_dim.png",
+      "bytes": 17246
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/H_dim.png",
+      "destination": "assets/images/H_dim.png",
+      "bytes": 21113
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/L.png",
+      "destination": "assets/images/L.png",
+      "bytes": 1343
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/L_dim.png",
+      "destination": "assets/images/L_dim.png",
+      "bytes": 15195
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/M.png",
+      "destination": "assets/images/M.png",
+      "bytes": 221
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/MT.png",
+      "destination": "assets/images/MT.png",
+      "bytes": 802
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/MT_dim.png",
+      "destination": "assets/images/MT_dim.png",
+      "bytes": 16831
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/M_dim.png",
+      "destination": "assets/images/M_dim.png",
+      "bytes": 20564
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/PIPE.png",
+      "destination": "assets/images/PIPE.png",
+      "bytes": 3763
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/PIPE_dim.png",
+      "destination": "assets/images/PIPE_dim.png",
+      "bytes": 48842
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/S.png",
+      "destination": "assets/images/S.png",
+      "bytes": 1528
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/ST.png",
+      "destination": "assets/images/ST.png",
+      "bytes": 1072
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/ST_dim.png",
+      "destination": "assets/images/ST_dim.png",
+      "bytes": 18314
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/S_dim.png",
+      "destination": "assets/images/S_dim.png",
+      "bytes": 20667
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/W.png",
+      "destination": "assets/images/W.png",
+      "bytes": 1026
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/WT.png",
+      "destination": "assets/images/WT.png",
+      "bytes": 839
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/WT_dim.png",
+      "destination": "assets/images/WT_dim.png",
+      "bytes": 16857
+    },
+    {
+      "source": "Calc_8.9.0 copy/Properties/assets/flutter_assets/assets/images/steel_fabrication/shapes/W_dim.png",
+      "destination": "assets/images/W_dim.png",
+      "bytes": 21481
+    }
+  ],
+  "excluded_items_count": 31
+}

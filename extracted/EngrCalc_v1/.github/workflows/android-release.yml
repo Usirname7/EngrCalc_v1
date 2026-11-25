@@ -1,0 +1,66 @@
+name: EngrCalc_v1 Android release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      # The starter contains the app source but not a complete generated
+      # Android Gradle project. Generate the official platform scaffolding
+      # in the cloud on every clean build.
+      - name: Generate Android platform files
+        run: |
+          rm -rf android
+          flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
+
+      - name: Set application label
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("android/app/src/main/AndroidManifest.xml")
+          s = p.read_text()
+          s = s.replace('android:label="engr_calc_v1"', 'android:label="EngrCalc_v1"')
+          p.write_text(s)
+          PY
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Analyze Dart source
+        run: flutter analyze
+
+      - name: Run formula tests
+        run: flutter test
+
+      - name: Build standalone release APK
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EngrCalc_v1-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
