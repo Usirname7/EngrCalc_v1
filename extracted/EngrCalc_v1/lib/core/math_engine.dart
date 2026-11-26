@@ -6,40 +6,37 @@ class MathEngine {
       .replaceAll('′', "'").replaceAll('″', '"').replaceAll('−', '-');
     if (s.isEmpty) throw const FormatException('Enter a value');
 
-    // Feet/inches notation is always returned as inches.
-    final feetMatch = RegExp(r"([+-]?\d+(?:\.\d+)?)\s*(?:'|ft)\s*").firstMatch(s);
-    final inchMatch = RegExp(r'([+-]?\d+(?:\.\d+)?)\s*(?:"|in)').firstMatch(s);
-    if (feetMatch != null || inchMatch != null) {
-      var total = 0.0;
-      if (feetMatch != null) total += double.parse(feetMatch.group(1)!) * 12;
-      if (inchMatch != null) total += double.parse(inchMatch.group(1)!);
-      final fraction = RegExp(r'(\d+)\s*/\s*(\d+)').firstMatch(s);
+    double parsePart(String part) {
+      final cleaned = part.trim().replaceAll(RegExp(r'(inches|inch|in|")$'), '').trim();
+      final mixed = RegExp(r'^([+-]?\d+(?:\.\d+)?)\s+(\d+)\s*/\s*(\d+)$').firstMatch(cleaned);
+      if (mixed != null) {
+        final whole = double.parse(mixed.group(1)!);
+        final n = double.parse(mixed.group(2)!);
+        final d = double.parse(mixed.group(3)!);
+        if (d == 0) throw const FormatException('Zero denominator');
+        return whole < 0 ? whole - n / d : whole + n / d;
+      }
+      final fraction = RegExp(r'^([+-]?\d+)\s*/\s*(\d+)$').firstMatch(cleaned);
       if (fraction != null) {
-        final n = double.parse(fraction.group(1)!);
         final d = double.parse(fraction.group(2)!);
         if (d == 0) throw const FormatException('Zero denominator');
-        total += n / d;
+        return double.parse(fraction.group(1)!) / d;
       }
-      return total;
+      final value = double.tryParse(cleaned);
+      if (value == null || !value.isFinite) throw const FormatException('Invalid number');
+      return value;
     }
 
-    final mixed = RegExp(r'^([+-]?\d+(?:\.\d+)?)\s+(\d+)\s*/\s*(\d+)$').firstMatch(s);
-    if (mixed != null) {
-      final whole = double.parse(mixed.group(1)!);
-      final n = double.parse(mixed.group(2)!);
-      final d = double.parse(mixed.group(3)!);
-      if (d == 0) throw const FormatException('Zero denominator');
-      return whole < 0 ? whole - n / d : whole + n / d;
+    final feet = RegExp(r"^([+-]?\d+(?:\.\d+)?)\s*(?:'|ft)\s*(.*)$").firstMatch(s);
+    if (feet != null) {
+      final wholeFeet = double.parse(feet.group(1)!);
+      final remainder = feet.group(2)!.trim();
+      if (remainder.isEmpty) return wholeFeet * 12;
+      final inches = parsePart(remainder);
+      return wholeFeet < 0 ? wholeFeet * 12 - inches.abs() : wholeFeet * 12 + inches;
     }
-    final simple = RegExp(r'^([+-]?\d+)\s*/\s*(\d+)$').firstMatch(s);
-    if (simple != null) {
-      final d = double.parse(simple.group(2)!);
-      if (d == 0) throw const FormatException('Zero denominator');
-      return double.parse(simple.group(1)!) / d;
-    }
-    final value = double.tryParse(s);
-    if (value == null || !value.isFinite) throw const FormatException('Invalid number');
-    return value;
+    if (RegExp(r'(?:"|\bin\b)').hasMatch(s)) return parsePart(s);
+    return parsePart(s);
   }
 
   static String fmt(double value, [int places = 4]) =>
@@ -100,9 +97,9 @@ class MathEngine {
 
   // Engineering-tool calculations. Dimensional inputs for these tools are inches.
   static double boardFeet(double thickness, double width, double length) =>
-      thickness * width * length / 144.0;
+      thickness * width * length / 12.0;
   static double concreteYards(double length, double width, double thickness) =>
-      length * width * thickness / 46656.0;
+      length * width * thickness / 324.0;
   static double cylinderVolume(double diameter, double length) =>
       pi * pow(diameter / 2, 2) * length;
   static double cylinder(double diameter, double length) =>
