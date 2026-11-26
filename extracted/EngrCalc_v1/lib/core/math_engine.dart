@@ -73,7 +73,7 @@ class MathEngine {
   }
 
   static double boardFeet(double thicknessIn, double widthIn, double lengthFt) =>
-      thicknessIn * widthIn * lengthFt;
+      thicknessIn * widthIn * lengthFt / 12;
   static double concreteYards(double lengthFt, double widthFt, double thicknessIn) =>
       lengthFt * widthFt * thicknessIn / 324;
   static double cylinderVolume(double diameter, double length) =>
