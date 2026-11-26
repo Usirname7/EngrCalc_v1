@@ -111,10 +111,10 @@ class _CalcPageState extends State<CalcPage> {
       result = MathEngine.fmt(value, 6);
     } else if (MathEngine.isAreaOperation(operation)) {
       final factor = MathEngine.lengthToInches[displayUnit]!;
-      result = '\${MathEngine.fmt(value / (factor * factor), 4)} \${displayUnit}²';
+      result = '${MathEngine.fmt(value / (factor * factor), 4)} ${displayUnit}²';
     } else {
       final converted = MathEngine.length(value, 'in', displayUnit);
-      result = '\${MathEngine.fmt(converted, 4)} \${displayUnit}\n\${MathEngine.feetInches(value)}';
+      result = '${MathEngine.fmt(converted, 4)} ${displayUnit}\n${MathEngine.feetInches(value)}';
     }
   }
 
