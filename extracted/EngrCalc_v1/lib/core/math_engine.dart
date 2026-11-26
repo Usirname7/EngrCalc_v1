@@ -101,7 +101,7 @@ class MathEngine {
   static double concreteYards(double length, double width, double thickness) =>
       length * width * thickness / 324.0;
   static double cylinderVolume(double diameter, double length) =>
-      pi * pow(diameter / 2, 2) * length;
+      (pi * pow(diameter / 2, 2) * length).toDouble();
   static double cylinder(double diameter, double length) =>
       cylinderVolume(diameter, length);
   static double volts(double current, double resistance) => current * resistance;
