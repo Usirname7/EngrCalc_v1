@@ -96,8 +96,9 @@ class MathEngine {
       operation == '÷ dimension';
 
   // Engineering-tool calculations. Dimensional inputs for these tools are inches.
+  // Board feet: thickness, width, and length are all entered in inches.
   static double boardFeet(double thickness, double width, double length) =>
-      thickness * width * length / 12.0;
+      thickness * width * length / 144.0;
   static double concreteYards(double length, double width, double thickness) =>
       length * width * thickness / 324.0;
   static double cylinderVolume(double diameter, double length) =>
