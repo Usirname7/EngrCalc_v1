@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test-and-build:
@@ -35,7 +35,6 @@ jobs:
           rm -rf android
           flutter create --platforms=android --org com.engrcalc --project-name engr_calc_v1 .
           sed -i 's/android:label="engr_calc_v1"/android:label="EngrCalc_v1"/' android/app/src/main/AndroidManifest.xml
-          # flutter create generates a template test that targets MyApp; this app uses EngrCalcApp.
           rm -f test/widget_test.dart
       - name: Resolve dependencies
         working-directory: extracted/EngrCalc_v1
@@ -56,3 +55,12 @@ jobs:
           path: extracted/EngrCalc_v1/build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
           retention-days: 30
+      - name: Publish APK on GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APK_PATH: extracted/EngrCalc_v1/build/app/outputs/flutter-apk/app-release.apk
+          TAG: v0.1.${{ github.run_number }}
+        run: |
+          gh release create "$TAG" "$APK_PATH" \
+            --title "EngrCalc_v1 $TAG" \
+            --notes "Android APK built by GitHub Actions after Dart analysis and formula tests passed."
