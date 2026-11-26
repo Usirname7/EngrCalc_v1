@@ -34,27 +34,24 @@ class CalcPage extends StatefulWidget {
   @override
   State<CalcPage> createState() => _CalcPageState();
 }
-
 class _CalcPageState extends State<CalcPage> {
   final first = TextEditingController();
   final second = TextEditingController();
   late TextEditingController active = first;
-
-  String operation = '+';
-  String sourceUnit = 'in';
-  String displayUnit = 'in';
+  String operation = '+', sourceUnit = 'in', displayUnit = 'in';
   String result = '';
   String? error;
-  double? resultInches;
-
+  double? resultValue;
   static const units = ['in', 'ft', 'yd', 'mm', 'cm', 'm'];
-  static const operations = ['+', '−', '×', '÷'];
+  static const operations = ['+', '−', '× number', '× dimension', '÷ number', '÷ dimension'];
 
   @override
-  void dispose() {
-    first.dispose();
-    second.dispose();
-    super.dispose();
+  void dispose() { first.dispose(); second.dispose(); super.dispose(); }
+
+  double _measurementInches(String raw) {
+    final value = MathEngine.number(raw);
+    final explicit = RegExp(r"""('|\"|\bft\b|\bin\b)""", caseSensitive: false).hasMatch(raw);
+    return explicit ? value : MathEngine.toInches(value, sourceUnit);
   }
 
   void append(String value) {
@@ -82,199 +79,116 @@ class _CalcPageState extends State<CalcPage> {
         text: text.replaceRange(from, end, ''),
         selection: TextSelection.collapsed(offset: from),
       );
+      error = null;
     });
   }
 
   void clearActive() {
     setState(() {
-      active.clear();
-      error = null;
+      active.clear(); error = null; result = ''; resultValue = null;
     });
   }
 
   void calculate() {
     try {
-      final a = MathEngine.number(first.text);
-      final b = MathEngine.number(second.text);
-      double value;
-
-      switch (operation) {
-        case '+':
-          value = a + b;
-          break;
-        case '−':
-          value = a - b;
-          break;
-        case '×':
-          value = a * b;
-          break;
-        case '÷':
-          if (b == 0) throw const FormatException('Cannot divide by zero');
-          value = a / b;
-          break;
-        default:
-          throw const FormatException('Choose an operation');
-      }
-
-      setState(() {
-        resultInches = value;
-        error = null;
-        _updateDisplay();
-      });
+      final a = _measurementInches(first.text);
+      final scalar = operation == '× number' || operation == '÷ number';
+      final b = scalar ? MathEngine.number(second.text) : _measurementInches(second.text);
+      final value = MathEngine.calculateMeasurement(a, b, operation);
+      setState(() { resultValue = value; error = null; _updateDisplay(); });
     } catch (e) {
       setState(() {
-        resultInches = null;
-        result = '';
+        resultValue = null; result = '';
         error = e.toString().replaceAll('FormatException: ', '');
       });
     }
   }
 
   void _updateDisplay() {
-    if (resultInches == null) return;
-    final inches = resultInches!;
-    final converted = MathEngine.length(inches, 'in', displayUnit);
-    final decimal = MathEngine.fmt(converted, 4);
-    final fi = MathEngine.feetInches(inches);
-    result = '$decimal $displayUnit\n$fi';
+    if (resultValue == null) return;
+    final value = resultValue!;
+    if (MathEngine.isDimensionlessOperation(operation)) {
+      result = MathEngine.fmt(value, 6);
+    } else if (MathEngine.isAreaOperation(operation)) {
+      final factor = MathEngine.lengthToInches[displayUnit]!;
+      result = '\${MathEngine.fmt(value / (factor * factor), 4)} \${displayUnit}²';
+    } else {
+      final converted = MathEngine.length(value, 'in', displayUnit);
+      result = '\${MathEngine.fmt(converted, 4)} \${displayUnit}\n\${MathEngine.feetInches(value)}';
+    }
   }
 
-  Widget key(String label, VoidCallback? onPressed, {int flex = 1}) {
-    return Expanded(
-      flex: flex,
-      child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: SizedBox(
-          height: 56,
-          child: FilledButton.tonal(
-            onPressed: onPressed,
-            style: FilledButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            ),
-            child: Text(label, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
-          ),
-        ),
-      ),
-    );
-  }
+  Widget key(String label, VoidCallback? onPressed, {int flex = 1}) =>
+    Expanded(flex: flex, child: Padding(
+      padding: const EdgeInsets.all(4),
+      child: SizedBox(height: 54, child: FilledButton.tonal(
+        onPressed: onPressed,
+        style: FilledButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+        child: Text(label, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600)),
+      )),
+    ));
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        const Text('Measurement Calculator', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 4),
-        Text('Enter measurements using feet, inches, or fractions', style: TextStyle(color: colorScheme.onSurfaceVariant)),
-        const SizedBox(height: 16),
-
+    final colors = Theme.of(context).colorScheme;
+    return ListView(padding: const EdgeInsets.all(16), children: [
+      const Text('Measurement Calculator', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+      const SizedBox(height: 4),
+      Text('Add/subtract dimensions, or multiply/divide by a number or dimension.',
+        style: TextStyle(color: colors.onSurfaceVariant)),
+      const SizedBox(height: 16),
+      DropdownButtonFormField<String>(
+        value: sourceUnit,
+        decoration: const InputDecoration(labelText: 'Default input unit', border: OutlineInputBorder()),
+        items: units.map((u) => DropdownMenuItem(value: u, child: Text(u))).toList(),
+        onChanged: (u) => setState(() { if (u != null) { sourceUnit = u; if (resultValue != null) _updateDisplay(); } }),
+      ),
+      const SizedBox(height: 12),
+      TextField(controller: first, readOnly: true, onTap: () => setState(() => active = first),
+        decoration: InputDecoration(labelText: 'Measurement 1', border: const OutlineInputBorder(),
+          filled: active == first, fillColor: active == first ? colors.primaryContainer.withOpacity(0.3) : null,
+          suffixIcon: IconButton(icon: const Icon(Icons.clear), onPressed: () => setState(() { first.clear(); result = ''; resultValue = null; })))),
+      const SizedBox(height: 12),
+      DropdownButtonFormField<String>(
+        value: operation, isExpanded: true,
+        decoration: const InputDecoration(labelText: 'Operation', border: OutlineInputBorder()),
+        items: operations.map((op) => DropdownMenuItem(value: op, child: Text(op))).toList(),
+        onChanged: (op) => setState(() { if (op != null) { operation = op; result = ''; resultValue = null; error = null; } }),
+      ),
+      const SizedBox(height: 12),
+      TextField(controller: second, readOnly: true, onTap: () => setState(() => active = second),
+        decoration: InputDecoration(labelText: operation.endsWith('number') ? 'Number (no unit)' : 'Measurement 2',
+          border: const OutlineInputBorder(), filled: active == second,
+          fillColor: active == second ? colors.primaryContainer.withOpacity(0.3) : null,
+          suffixIcon: IconButton(icon: const Icon(Icons.clear), onPressed: () => setState(() { second.clear(); result = ''; resultValue = null; })))),
+      const SizedBox(height: 14),
+      Row(children: [key('7', () => append('7')), key('8', () => append('8')), key('9', () => append('9')), key('⌫', backspace)]),
+      Row(children: [key('4', () => append('4')), key('5', () => append('5')), key('6', () => append('6')), key('C', clearActive)]),
+      Row(children: [key('1', () => append('1')), key('2', () => append('2')), key('3', () => append('3')), key("'", () => append("' "))]),
+      Row(children: [key('0', () => append('0')), key('.', () => append('.')), key('/', () => append('/')), key('"', () => append('"'))]),
+      const SizedBox(height: 8),
+      Row(children: [key('Space', () => append(' ')), key('½', () => append('1/2')), key('Calculate', calculate, flex: 2)]),
+      const SizedBox(height: 18),
+      if (resultValue != null && !MathEngine.isDimensionlessOperation(operation))
         DropdownButtonFormField<String>(
-          value: sourceUnit,
-          decoration: const InputDecoration(
-            labelText: 'Input unit',
-            border: OutlineInputBorder(),
-          ),
+          value: displayUnit,
+          decoration: const InputDecoration(labelText: 'Show result in', border: OutlineInputBorder()),
           items: units.map((u) => DropdownMenuItem(value: u, child: Text(u))).toList(),
-          onChanged: (u) => setState(() {
-            sourceUnit = u!;
-            if (resultInches != null) _updateDisplay();
-          }),
+          onChanged: (u) => setState(() { if (u != null) { displayUnit = u; _updateDisplay(); } }),
         ),
-        const SizedBox(height: 12),
-
-        TextField(
-          controller: first,
-          readOnly: true,
-          onTap: () => setState(() => active = first),
-          decoration: InputDecoration(
-            labelText: 'Measurement 1',
-            border: const OutlineInputBorder(),
-            filled: active == first,
-            fillColor: active == first ? colorScheme.primaryContainer.withOpacity(0.3) : null,
-            suffixIcon: IconButton(icon: const Icon(Icons.clear), onPressed: () => first.clear()),
-          ),
-        ),
-        const SizedBox(height: 12),
-
-        SegmentedButton<String>(
-          segments: operations.map((op) => ButtonSegment(value: op, label: Text(op, style: const TextStyle(fontSize: 20)))).toList(),
-          selected: {operation},
-          onSelectionChanged: (s) => setState(() => operation = s.first),
-          showSelectedIcon: false,
-        ),
-        const SizedBox(height: 12),
-
-        TextField(
-          controller: second,
-          readOnly: true,
-          onTap: () => setState(() => active = second),
-          decoration: InputDecoration(
-            labelText: 'Measurement 2',
-            border: const OutlineInputBorder(),
-            filled: active == second,
-            fillColor: active == second ? colorScheme.primaryContainer.withOpacity(0.3) : null,
-            suffixIcon: IconButton(icon: const Icon(Icons.clear), onPressed: () => second.clear()),
-          ),
-        ),
-        const SizedBox(height: 16),
-
-        Row(children: [key('7', () => append('7')), key('8', () => append('8')), key('9', () => append('9')), key('⌫', backspace)]),
-        Row(children: [key('4', () => append('4')), key('5', () => append('5')), key('6', () => append('6')), key('C', clearActive)]),
-        Row(children: [key('1', () => append('1')), key('2', () => append('2')), key('3', () => append('3')), key("'", () => append("' "))]),
-        Row(children: [key('0', () => append('0')), key('.', () => append('.')), key('/', () => append('/')), key('"', () => append('"'))]),
-        const SizedBox(height: 8),
-        Row(children: [
-          key('Space', () => append(' '), flex: 1),
-          key('Calculate', calculate, flex: 2),
-        ]),
-
-        const SizedBox(height: 20),
-
-        if (resultInches != null)
-          DropdownButtonFormField<String>(
-            value: displayUnit,
-            decoration: const InputDecoration(labelText: 'Show result in', border: OutlineInputBorder()),
-            items: units.map((u) => DropdownMenuItem(value: u, child: Text(u))).toList(),
-            onChanged: (u) => setState(() {
-              displayUnit = u!;
-              _updateDisplay();
-            }),
-          ),
-
-        const SizedBox(height: 12),
-
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: colorScheme.surfaceContainerHighest,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Result', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-              const SizedBox(height: 8),
-              SelectableText(
-                error ?? (result.isEmpty ? 'Enter values and tap Calculate' : result),
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
-                  color: error != null ? colorScheme.error : null,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 12),
-        Text(
-          'Tip: Type 5\' 3 1/2" or use the buttons. Works with feet, inches, and fractions.',
-          style: TextStyle(fontSize: 13, color: colorScheme.onSurfaceVariant),
-        ),
-      ],
-    );
+      const SizedBox(height: 12),
+      Container(width: double.infinity, padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(color: colors.surfaceContainerHighest, borderRadius: BorderRadius.circular(16)),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text('Result', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          const SizedBox(height: 8),
+          SelectableText(error ?? (result.isEmpty ? 'Enter values and tap Calculate' : result),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: error != null ? colors.error : null)),
+        ])),
+      const SizedBox(height: 12),
+      Text('Example: 5\' 3 1/2" or 5.5 with input unit set to feet. For × number and ÷ number, the second entry is unitless.',
+        style: TextStyle(fontSize: 13, color: colors.onSurfaceVariant)),
+    ]);
   }
 }
 
