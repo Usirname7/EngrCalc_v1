@@ -55,10 +55,10 @@ class MathEngine {
     var num = ((value - feet * 12 - whole) * denominator).round();
     if (num == denominator) { whole++; num = 0; }
     if (whole == 12) { feet++; whole = 0; }
-    if (num == 0) return '${sign}${feet}\\' ${whole}"';
+    if (num == 0) return '${sign}${feet}\' ${whole}"';
     int gcd(int a, int b) => b == 0 ? a : gcd(b, a % b);
     final g = gcd(num, denominator);
-    return '${sign}${feet}\\' ${whole} ${num ~/ g}/${denominator ~/ g}"';
+    return '${sign}${feet}\' ${whole} ${num ~/ g}/${denominator ~/ g}"';
   }
 
   static const Map<String, double> lengthToInches = {
